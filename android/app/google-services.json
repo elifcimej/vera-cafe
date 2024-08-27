@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188512746347",
+    "project_id": "vera-cafe",
+    "storage_bucket": "vera-cafe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188512746347:android:b51ec2a750ac9455346a2e",
+        "android_client_info": {
+          "package_name": "com.example.vera_cafe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkYHKxj-EtyoahYbuhF61hxIy_mcM7OUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
