@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 class MyScaffold extends StatelessWidget {
   final String? title;
-  //final String? text;
-  //final Widget? MyExpanded;
   final Widget? child;
-  const MyScaffold(
-      {super.key, this.title, this.child /*this.text, this.MyExpanded*/});
+
+  const MyScaffold({super.key, this.title, this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +17,11 @@ class MyScaffold extends StatelessWidget {
         ),
         backgroundColor: const Color(0xFFF2DEBA),
       ),
+      body: child, // child widget'ını Scaffold'un body kısmına ekliyoruz
     );
   }
 }
+
 
 /*
 class MyExpanded extends StatelessWidget {
