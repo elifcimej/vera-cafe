@@ -37,12 +37,12 @@ class _MainPageState extends State<MainPage> {
     ];
     Map<String, Widget> menuItems = {
       'KAHVALTILAR': KahvaltilarPage(),
-      'FAST FOOD': const FastfoodPage(),
-      'TAVUK MENÜLER': const TavukMenulerPage(),
-      'MAKARNALAR': const MakarnalarPage(),
-      'SALATALAR': const SalatalarPage(),
-      'TATLILAR': const TatlilarPage(),
-      'İÇECEKLER': const IceceklerPage(),
+      'FAST FOOD': FastfoodPage(),
+      'TAVUK MENÜLER': TavukMenulerPage(),
+      'MAKARNALAR': MakarnalarPage(),
+      'SALATALAR': SalatalarPage(),
+      'TATLILAR': TatlilarPage(),
+      'İÇECEKLER': IceceklerPage(),
     };
     return Scaffold(
       backgroundColor: const Color(0xFFFAECD6),
