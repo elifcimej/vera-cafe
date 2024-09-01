@@ -17,7 +17,7 @@ class TavukMenulerPage extends StatelessWidget {
         future: tavukMenulerRef.get(), // Asenkron veriyi burada alıyoruz
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
                 child: CircularProgressIndicator()); // Yükleniyor göstergesi
           } else if (snapshot.hasError) {
             return Center(
@@ -26,17 +26,17 @@ class TavukMenulerPage extends StatelessWidget {
           } else if (snapshot.hasData) {
             final tavukMenulerListesi = snapshot.data!.docs;
             if (tavukMenulerListesi.isEmpty) {
-              return Center(child: Text('Kayıt yok')); // Boş veri durumu
+              return const Center(child: Text('Kayıt yok')); // Boş veri durumu
             }
             return ListView.builder(
               itemCount: tavukMenulerListesi.length,
               itemBuilder: (context, index) {
                 var tavukMenuler = tavukMenulerListesi[index];
                 return Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                       vertical: 8.0,
                       horizontal: 16.0), // Kutu etrafında boşluk bırakır
-                  padding: EdgeInsets.all(16.0), // Kutu içindeki boşluk
+                  padding: const EdgeInsets.all(16.0), // Kutu içindeki boşluk
                   decoration: BoxDecoration(
                     color:
                         Colors.brown.withOpacity(0.1), // Şeffaf arka plan rengi
@@ -48,7 +48,7 @@ class TavukMenulerPage extends StatelessWidget {
                             .withOpacity(0.1), // Gölge rengi ve şeffaflık
                         spreadRadius: 2,
                         blurRadius: 4,
-                        offset: Offset(0, 2), // Gölge kayması
+                        offset: const Offset(0, 2), // Gölge kayması
                       ),
                     ],
                   ),
@@ -60,7 +60,7 @@ class TavukMenulerPage extends StatelessWidget {
                           Expanded(
                             child: Text(
                               '${tavukMenuler['name']}', // 'name' alanı
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'Roboto',
                                 color: Colors.brown,
                                 fontSize: 20,
@@ -69,7 +69,7 @@ class TavukMenulerPage extends StatelessWidget {
                           ),
                           Text(
                             '${tavukMenuler['price']}', // 'price' alanı
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.brown,
                               fontSize: 20,
@@ -77,7 +77,8 @@ class TavukMenulerPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8.0), // Başlık ve içerik arasında boşluk
+                      const SizedBox(
+                          height: 8.0), // Başlık ve içerik arasında boşluk
                       Text(
                         '${tavukMenuler['ingredient']}', // 'description' alanı
                         style: TextStyle(
@@ -92,7 +93,8 @@ class TavukMenulerPage extends StatelessWidget {
               },
             );
           } else {
-            return Center(child: Text('Bir sorun oluştu')); // Genel hata durumu
+            return const Center(
+                child: Text('Bir sorun oluştu')); // Genel hata durumu
           }
         },
       ),

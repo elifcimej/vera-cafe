@@ -29,13 +29,13 @@ flutter:
   uses-material-design: true
 
   assets:
-     - assets/images/breakfast.jpg
-     - assets/images/burger.jpg
-     - assets/images/cake.jpg
-     - assets/images/chicken.jpg
-     - assets/images/pasta.jpg
-     - assets/images/salad.jpg
-     - assets/images/drinks.jpg
+    - assets/images/breakfast.jpg
+    - assets/images/burger.jpg
+    - assets/images/cake.jpg
+    - assets/images/chicken.jpg
+    - assets/images/pasta.jpg
+    - assets/images/salad.jpg
+    - assets/images/drinks.jpg
 
 
   fonts:
