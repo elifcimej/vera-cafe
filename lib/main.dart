@@ -7,12 +7,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       options: const FirebaseOptions(
-          apiKey: "AIzaSyAyzHSCUrA0n0UgD0Noq4fCQfF2EzHHCs8",
-          authDomain: "vera-cafe.firebaseapp.com",
-          projectId: "vera-cafe",
-          storageBucket: "vera-cafe.appspot.com",
+          apiKey: "AIzaSyCkYHKxj-EtyoahYbuhF61hxIy_mcM7OUo",
+          appId: "1:188512746347:android:ff6e5d4d0d085f1c346a2e",
           messagingSenderId: "188512746347",
-          appId: "1:188512746347:web:a8cab688b5fe9ef9346a2e"));
+          projectId: "vera-cafe"));
   runApp(const MyApp());
 }
 
