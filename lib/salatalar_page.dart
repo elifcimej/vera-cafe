@@ -22,7 +22,7 @@ class SalatalarPage extends StatelessWidget {
         future: salataRef.get(), // Asenkron veriyi burada alıyoruz
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
                 child: CircularProgressIndicator()); // Yükleniyor göstergesi
           } else if (snapshot.hasError) {
             return Center(
@@ -31,17 +31,17 @@ class SalatalarPage extends StatelessWidget {
           } else if (snapshot.hasData) {
             final salataListesi = snapshot.data!.docs;
             if (salataListesi.isEmpty) {
-              return Center(child: Text('Kayıt yok')); // Boş veri durumu
+              return const Center(child: Text('Kayıt yok')); // Boş veri durumu
             }
             return ListView.builder(
               itemCount: salataListesi.length,
               itemBuilder: (context, index) {
                 var salata = salataListesi[index];
                 return Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                       vertical: 8.0,
                       horizontal: 16.0), // Kutu etrafında boşluk bırakır
-                  padding: EdgeInsets.all(16.0), // Kutu içindeki boşluk
+                  padding: const EdgeInsets.all(16.0), // Kutu içindeki boşluk
                   decoration: BoxDecoration(
                     color:
                         Colors.brown.withOpacity(0.1), // Şeffaf arka plan rengi
@@ -82,14 +82,16 @@ class SalatalarPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8.0), // Başlık ve içerik arasında boşluk
+                      const SizedBox(
+                          height: 8.0), // Başlık ve içerik arasında boşluk
                     ],
                   ),
                 );
               },
             );
           } else {
-            return Center(child: Text('Bir sorun oluştu')); // Genel hata durumu
+            return const Center(
+                child: Text('Bir sorun oluştu')); // Genel hata durumu
           }
         },
       ),

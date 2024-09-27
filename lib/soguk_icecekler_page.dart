@@ -9,7 +9,7 @@ class SogukIceceklerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CollectionReference sogukIceceklerRef =
-    _firestore.collection('soguk_icecekler'); // Koleksiyon adı
+        _firestore.collection('soguk_icecekler'); // Koleksiyon adı
 
     return MyScaffold(
       title: 'SOĞUK İÇECEKLER',
@@ -17,34 +17,38 @@ class SogukIceceklerPage extends StatelessWidget {
         future: sogukIceceklerRef.get(), // Asenkron veriyi burada alıyoruz
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
                 child: CircularProgressIndicator()); // Yükleniyor göstergesi
           } else if (snapshot.hasError) {
             return Center(
-                child: Text('Bir hata oluştu: ${snapshot.error}')); // Hata mesajı
+                child:
+                    Text('Bir hata oluştu: ${snapshot.error}')); // Hata mesajı
           } else if (snapshot.hasData) {
             final sogukIceceklerListesi = snapshot.data!.docs;
             if (sogukIceceklerListesi.isEmpty) {
-              return Center(child: Text('Kayıt yok')); // Boş veri durumu
+              return const Center(child: Text('Kayıt yok')); // Boş veri durumu
             }
             return ListView.builder(
               itemCount: sogukIceceklerListesi.length,
               itemBuilder: (context, index) {
                 var sogukIcecek = sogukIceceklerListesi[index];
                 return Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                       vertical: 8.0,
                       horizontal: 16.0), // Kutu etrafında boşluk bırakır
-                  padding: EdgeInsets.all(16.0), // Kutu içindeki boşluk
+                  padding: const EdgeInsets.all(16.0), // Kutu içindeki boşluk
                   decoration: BoxDecoration(
-                    color: Colors.brown.withOpacity(0.1), // Şeffaf arka plan rengi
-                    borderRadius: BorderRadius.circular(8.0), // Köşeleri yuvarlatır
+                    color:
+                        Colors.brown.withOpacity(0.1), // Şeffaf arka plan rengi
+                    borderRadius:
+                        BorderRadius.circular(8.0), // Köşeleri yuvarlatır
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.brown.withOpacity(0.1), // Gölge rengi ve şeffaflık
+                        color: Colors.brown
+                            .withOpacity(0.1), // Gölge rengi ve şeffaflık
                         spreadRadius: 2,
                         blurRadius: 4,
-                        offset: Offset(0, 2), // Gölge kayması
+                        offset: const Offset(0, 2), // Gölge kayması
                       ),
                     ],
                   ),
@@ -56,7 +60,7 @@ class SogukIceceklerPage extends StatelessWidget {
                           Expanded(
                             child: Text(
                               '${sogukIcecek['name']}', // 'name' alanı
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'Roboto',
                                 color: Colors.brown,
                                 fontSize: 20,
@@ -65,7 +69,7 @@ class SogukIceceklerPage extends StatelessWidget {
                           ),
                           Text(
                             sogukIcecek['price'], // 'price' alanı
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.brown,
                               fontSize: 20,
@@ -79,7 +83,8 @@ class SogukIceceklerPage extends StatelessWidget {
               },
             );
           } else {
-            return Center(child: Text('Bir sorun oluştu')); // Genel hata durumu
+            return const Center(
+                child: Text('Bir sorun oluştu')); // Genel hata durumu
           }
         },
       ),

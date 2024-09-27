@@ -75,7 +75,7 @@ class KahvaltilarPage extends StatelessWidget {
         future: kahvaltiRef.get(), // Asenkron veriyi burada alıyoruz
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
                 child: CircularProgressIndicator()); // Yükleniyor göstergesi
           } else if (snapshot.hasError) {
             return Center(
@@ -84,17 +84,17 @@ class KahvaltilarPage extends StatelessWidget {
           } else if (snapshot.hasData) {
             final kahvaltiListesi = snapshot.data!.docs;
             if (kahvaltiListesi.isEmpty) {
-              return Center(child: Text('Kayıt yok')); // Boş veri durumu
+              return const Center(child: Text('Kayıt yok')); // Boş veri durumu
             }
             return ListView.builder(
               itemCount: kahvaltiListesi.length,
               itemBuilder: (context, index) {
                 var kahvalti = kahvaltiListesi[index];
                 return Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                       vertical: 8.0,
                       horizontal: 16.0), // Kutu etrafında boşluk bırakır
-                  padding: EdgeInsets.all(16.0), // Kutu içindeki boşluk
+                  padding: const EdgeInsets.all(16.0), // Kutu içindeki boşluk
                   decoration: BoxDecoration(
                     color:
                         Colors.brown.withOpacity(0.1), // Şeffaf arka plan rengi
@@ -106,7 +106,7 @@ class KahvaltilarPage extends StatelessWidget {
                             .withOpacity(0.1), // Gölge rengi ve şeffaflık
                         spreadRadius: 2,
                         blurRadius: 4,
-                        offset: Offset(0, 2), // Gölge kayması
+                        offset: const Offset(0, 2), // Gölge kayması
                       ),
                     ],
                   ),
@@ -118,7 +118,7 @@ class KahvaltilarPage extends StatelessWidget {
                           Expanded(
                             child: Text(
                               '${kahvalti['name']}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'Roboto',
                                 color: Colors.brown,
                                 fontSize: 20,
@@ -127,7 +127,7 @@ class KahvaltilarPage extends StatelessWidget {
                           ),
                           Text(
                             '${kahvalti['price']}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Roboto',
                               color: Colors.brown,
                               fontSize: 20,
@@ -135,7 +135,8 @@ class KahvaltilarPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8.0), // Başlık ve içerik arasında boşluk
+                      const SizedBox(
+                          height: 8.0), // Başlık ve içerik arasında boşluk
                       Text(
                         '${kahvalti['ingredient']}',
                         style: TextStyle(
@@ -150,7 +151,8 @@ class KahvaltilarPage extends StatelessWidget {
               },
             );
           } else {
-            return Center(child: Text('Bir sorun oluştu')); // Genel hata durumu
+            return const Center(
+                child: Text('Bir sorun oluştu')); // Genel hata durumu
           }
         },
       ),

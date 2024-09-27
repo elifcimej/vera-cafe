@@ -42,7 +42,7 @@ class _MainPageState extends State<MainPage> {
       'MAKARNALAR': MakarnalarPage(),
       'SALATALAR': SalatalarPage(),
       'TATLILAR': TatlilarPage(),
-      'İÇECEKLER': IceceklerPage(),
+      'İÇECEKLER': const IceceklerPage(),
     };
     return Scaffold(
       backgroundColor: const Color(0xFFFAECD6),

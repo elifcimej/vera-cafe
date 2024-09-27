@@ -5,7 +5,14 @@ import 'package:vera_cafe/main_page.dart';
 //CollectionReference users = FirebaseFirestore.instance.collection('users');
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Firebase'i başlatın
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: "AIzaSyAyzHSCUrA0n0UgD0Noq4fCQfF2EzHHCs8",
+          authDomain: "vera-cafe.firebaseapp.com",
+          projectId: "vera-cafe",
+          storageBucket: "vera-cafe.appspot.com",
+          messagingSenderId: "188512746347",
+          appId: "1:188512746347:web:a8cab688b5fe9ef9346a2e"));
   runApp(const MyApp());
 }
 
