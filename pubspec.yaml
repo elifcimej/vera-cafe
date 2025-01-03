@@ -36,6 +36,8 @@ flutter:
     - assets/images/pasta.jpg
     - assets/images/salad.jpg
     - assets/images/drinks.jpg
+    - assets/images/yesil.jpg
+    - assets/images/pizza.jpg
 
 
   fonts:

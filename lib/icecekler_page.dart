@@ -25,7 +25,7 @@ class IceceklerPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => KahvelerPage()),
+                MaterialPageRoute(builder: (context) => SogukIceceklerPage()),
               );
             },
             style: ElevatedButton.styleFrom(
@@ -41,7 +41,7 @@ class IceceklerPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SogukIceceklerPage()),
+                MaterialPageRoute(builder: (context) => SicakIceceklerPage()),
               );
             },
             style: ElevatedButton.styleFrom(
@@ -57,7 +57,7 @@ class IceceklerPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SicakIceceklerPage()),
+                MaterialPageRoute(builder: (context) => KahvelerPage()),
               );
             },
             style: ElevatedButton.styleFrom(

@@ -6,32 +6,17 @@ import 'package:vera_cafe/main_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+      name: 'vera-cafe',
       options: const FirebaseOptions(
-          apiKey: "AIzaSyCkYHKxj-EtyoahYbuhF61hxIy_mcM7OUo",
-          appId: "1:188512746347:android:ff6e5d4d0d085f1c346a2e",
+          apiKey: "AIzaSyAyzHSCUrA0n0UgD0Noq4fCQfF2EzHHCs8",
+          authDomain: "vera-cafe.firebaseapp.com",
+          projectId: "vera-cafe",
+          storageBucket: "vera-cafe.appspot.com",
           messagingSenderId: "188512746347",
-          projectId: "vera-cafe"));
+          appId: "1:188512746347:web:bdafb861e589ef12346a2e"));
   runApp(const MyApp());
 }
 
-/*
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
-  if (Platform.isAndroid) {
-    await Firebase.initializeApp(
-      options: const FirebaseOptions(
-          apiKey: "AIzaSyCkYHKxj-EtyoahYbuhF61hxIy_mcM7OUo",
-          appId: "1:188512746347:android:ff6e5d4d0d085f1c346a2e",
-          messagingSenderId: "188512746347",
-          projectId: "vera-cafe"),
-    );
-  } else {
-    await Firebase.initializeApp();
-  } // TODO Implement this library.
-}
-*/
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

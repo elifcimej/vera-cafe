@@ -3,9 +3,11 @@ import 'package:vera_cafe/fastfood_page.dart';
 import 'package:vera_cafe/icecekler_page.dart';
 import 'package:vera_cafe/kahvaltilar_page.dart';
 import 'package:vera_cafe/makarnalar_page.dart';
+import 'package:vera_cafe/pizza_page.dart';
 import 'package:vera_cafe/salatalar_page.dart';
 import 'package:vera_cafe/tatlilar_page.dart';
 import 'package:vera_cafe/tavuk_menuler_page.dart';
+import 'package:vera_cafe/yesil_lezzetler_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key, required String title});
@@ -21,27 +23,33 @@ class _MainPageState extends State<MainPage> {
       'assets/images/breakfast.jpg',
       'assets/images/burger.jpg',
       'assets/images/chicken.jpg',
+      'assets/images/pizza.jpg',
       'assets/images/pasta.jpg',
       'assets/images/salad.jpg',
       'assets/images/cake.jpg',
+      'assets/images/yesil.jpg',
       'assets/images/drinks.jpg',
     ];
     List<String> names = [
       'KAHVALTILAR',
       'FAST FOOD',
       'TAVUK MENÜLER',
+      'PİZZALAR',
       'MAKARNALAR',
       'SALATALAR',
       'TATLILAR',
+      'YEŞİL LEZZETLER',
       'İÇECEKLER'
     ];
     Map<String, Widget> menuItems = {
       'KAHVALTILAR': KahvaltilarPage(),
       'FAST FOOD': FastfoodPage(),
       'TAVUK MENÜLER': TavukMenulerPage(),
+      'PİZZALAR': PizzaPage(),
       'MAKARNALAR': MakarnalarPage(),
       'SALATALAR': SalatalarPage(),
       'TATLILAR': TatlilarPage(),
+      'YEŞİL LEZZETLER': YesilLezzetlerPage(),
       'İÇECEKLER': const IceceklerPage(),
     };
     return Scaffold(
